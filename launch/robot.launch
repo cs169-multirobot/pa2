@@ -1,0 +1,12 @@
+<launch>
+
+  <arg name="target_strength" default="-40" />
+  <rosparam param="target_strength" subst_value="True">$(arg target_strength)</rosparam>
+
+  <!-- start node for wifi strength publisher -->
+  <include file="$(find pa2)/launch/wifi.launch" />
+
+  <!-- initialize node for robot behavior -->
+  <node name="robot_follower" pkg="pa2" type="robot_node.py" respawn="false" output="screen" />
+
+</launch>
