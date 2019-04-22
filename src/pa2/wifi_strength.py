@@ -8,7 +8,7 @@ class WifiStrength:
 
         self.signal_strength = 0
 
-        self.pub = rospy.Publisher('wifi_strength', Wifi)
+        self.pub = rospy.Publisher('wifi_strength', Wifi, queue_size=1)
 
 
     def spin(self):

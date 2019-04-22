@@ -1,7 +1,10 @@
 <launch>
 
-  <arg name="target_strength" default="-40" />
+  <arg name="target_strength" default="-27" />
   <rosparam param="target_strength" subst_value="True">$(arg target_strength)</rosparam>
+
+  <!-- start turtlebot3 -->
+  <include file="$(find turtlebot3_bringup)/launch/turtlebot3_robot.launch" />
 
   <!-- start node for wifi strength publisher -->
   <include file="$(find pa2)/launch/wifi.launch" />
